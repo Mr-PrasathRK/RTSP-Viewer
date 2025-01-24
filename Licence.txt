@@ -1,0 +1,35 @@
+RTSP Stream Test GUI
+Overview
+This Python-based program is a simple GUI for testing RTSP (Real-Time Streaming Protocol) camera streams. It allows users to input camera credentials (username, password, IP address, and port) and displays the camera's live feed in the GUI window.
+
+It uses tkinter for the GUI, OpenCV for capturing and displaying the RTSP stream, and Pillow for converting and displaying images in the tkinter window.
+
+Features
+Connect to RTSP Streams: Enter RTSP credentials (username, password, IP address, and port) to connect to the camera.
+Display Video Feed: After connecting, the camera's live feed is displayed in the GUI window.
+Error Handling: The program provides error messages for invalid credentials, failed stream connections, or display issues.
+Requirements
+Before running the program, ensure that you have the following libraries installed:
+
+tkinter: For creating the GUI (usually comes pre-installed with Python).
+opencv-python: For capturing and displaying RTSP video streams.
+Pillow: For converting video frames to a format suitable for display in tkinter.
+You can install them using pip:
+
+bash
+Copy
+Edit
+pip install opencv-python pillow
+Usage
+Input Fields: Enter the following details:
+
+Username: The username required to access the camera stream.
+Password: The password corresponding to the username.
+IP Address: The IP address of the camera (ensure the camera is connected to the same network).
+Port Number: The port number used by the RTSP stream (default is usually 554).
+Test RTSP: Click the "Test RTSP" button to connect to the stream. If successful, the live video feed from the camera will appear in the window.
+
+Error Handling: If the connection fails, error messages will provide information on what went wrong (e.g., wrong credentials, stream connection issue).
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.

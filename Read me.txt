@@ -1,0 +1,91 @@
+# RTSP Stream Test GUI
+
+This program is a simple graphical user interface (GUI) to test RTSP (Real-Time Streaming Protocol) camera streams. The application allows users to input RTSP stream details and display the camera feed in a window.
+
+## Features:
+- **Input Fields**: Enter the username, password, IP address, and port number of the RTSP stream.
+- **RTSP Stream Testing**: The program constructs an RTSP URL and attempts to connect to the camera feed.
+- **Display**: If the RTSP connection is successful, the program will show the camera's live feed in the application window.
+
+---
+
+## How to Use the Program:
+
+1. **Username**:  
+   - **Field Description**: Enter the username required to access the camera's RTSP stream.
+   - **Example**: `admin` (This is a typical default username for many IP cameras).
+
+2. **Password**:  
+   - **Field Description**: Enter the password for the RTSP stream associated with the username.
+   - **Example**: `admin` (This is often the default password for many cameras, but you should replace it with your camera's actual password).
+
+3. **IP Address**:  
+   - **Field Description**: Enter the IP address of the camera you want to connect to.
+   - **Example**: `192.168.1.119` (This is an example IP address in a typical local network).
+
+4. **Port Number**:  
+   - **Field Description**: Enter the port number used by the camera for the RTSP stream.
+   - **Example**: `554` (Port `554` is the default RTSP port for many cameras).
+
+5. **Test RTSP Button**:  
+   - After filling in the above fields, click the **Test RTSP** button to attempt connecting to the camera stream.
+   - If the connection is successful, the camera feed will be displayed in the left part of the window.
+   - If there is an error connecting (e.g., incorrect username/password, camera offline), an error message will be shown.
+
+---
+
+## How the Program Works:
+
+1. **Forming RTSP URL**:  
+   The program uses the provided input to form the RTSP URL in the following format:
+   ```
+   rtsp://<username>:<password>@<ip_address>:<port_number>
+   ```
+
+2. **Connecting to the RTSP Stream**:  
+   - The program attempts to connect to the provided RTSP stream using the OpenCV library.  
+   - It tries to open the stream and begin receiving video frames.
+
+3. **Displaying the Video Feed**:  
+   - If the connection to the stream is successful, OpenCV retrieves video frames from the camera.  
+   - These frames are then converted and displayed inside the tkinter window using the Pillow library.
+
+4. **Error Handling**:  
+   - If any errors occur (such as a wrong RTSP URL, authentication failure, or stream failure), an error message is shown to inform the user.
+
+---
+
+## Requirements:
+
+To run this program, you need to install the following Python libraries:
+- **tkinter**: For creating the GUI (usually comes pre-installed with Python).
+- **opencv-python**: For capturing the RTSP stream.
+- **Pillow**: For handling images and converting them into a format suitable for display in tkinter.
+
+You can install these libraries using pip:
+
+```bash
+pip install opencv-python pillow
+```
+
+---
+
+## Troubleshooting:
+
+1. **Unable to connect to the RTSP stream**:
+   - Ensure that the camera is turned on and connected to the network.
+   - Double-check the username, password, IP address, and port number to make sure they are correct.
+
+2. **No video feed displayed**:
+   - Verify that the RTSP URL is correct and that your camera supports RTSP streaming.
+   - If your camera uses a different port for RTSP, make sure to update the port number in the input.
+
+---
+
+## License:
+
+This program is provided for educational and testing purposes only. Modify it and use it according to your needs.
+
+---
+
+I hope this `README` file helps explain the usage of the program! You can copy and paste this content into a `README.md` file for your project. Let me know if you need any modifications or additions!
